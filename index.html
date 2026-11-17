@@ -2,14 +2,312 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cybersecurity Professional Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Biruk Bergena's cybersecurity portfolio featuring SOC projects, security engineering skills, and professional experience.">
+  <title>Biruk Bergena | Cybersecurity Portfolio</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b1423;
+      color: #f8fafc;
+      line-height: 1.7;
+    }
+
+    header {
+      background: #111e30;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      border-bottom: 1px solid #26364a;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: #2dd4bf;
+    }
+
+    nav a {
+      color: #e2e8f0;
+      text-decoration: none;
+      margin-left: 18px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #2dd4bf;
+    }
+
+    .hero {
+      max-width: 1050px;
+      margin: auto;
+      padding: 100px 8% 75px;
+    }
+
+    .eyebrow {
+      color: #2dd4bf;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    h1 {
+      font-size: clamp(34px, 6vw, 58px);
+      line-height: 1.2;
+      margin: 15px 0;
+    }
+
+    h2 {
+      color: #2dd4bf;
+      font-size: 23px;
+    }
+
+    p {
+      color: #b9c6d5;
+    }
+
+    .hero p {
+      max-width: 700px;
+      font-size: 17px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 7px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .primary {
+      background: #0d9488;
+      color: white;
+    }
+
+    .secondary {
+      border: 1px solid #64748b;
+      color: white;
+    }
+
+    .btn:hover {
+      opacity: 0.85;
+    }
+
+    section {
+      max-width: 1050px;
+      margin: auto;
+      padding: 45px 8%;
+    }
+
+    .card {
+      background: #17263a;
+      padding: 28px;
+      border-radius: 12px;
+      border: 1px solid #2b4058;
+      margin-top: 20px;
+    }
+
+    .card h3 {
+      color: #f8fafc;
+      margin-top: 0;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .tag {
+      background: #203c4b;
+      color: #5eead4;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+    }
+
+    footer {
+      text-align: center;
+      border-top: 1px solid #26364a;
+      padding: 25px;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 20px;
+      }
+
+      nav a {
+        margin: 0 12px 0 0;
+      }
+
+      .hero {
+        padding: 65px 8% 40px;
+      }
+    }
+  </style>
 </head>
-<body style="background-color:#0f172a; color:white; font-family:Arial; text-align:center; padding:60px;">
-    <h1>Welcome to My Cybersecurity Portfolio</h1>
-    <h2>Aspiring SOC Analyst | Cybersecurity Professional</h2>
-    <p>My cybersecurity projects, technical skills, education, and professional experience.</p>
-    <p>Website under development.</p>
+
+<body>
+
+  <header>
+    <div class="logo">🛡 Biruk Bergena</div>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#resume">Résumé</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <div class="hero" id="home">
+      <div class="eyebrow">WELCOME TO MY PORTFOLIO</div>
+
+      <h1>Hi, I'm Biruk Bergena.</h1>
+
+      <h2>
+        Cybersecurity Graduate | SOC Analyst |
+        Security Engineering
+      </h2>
+
+      <p>
+        I am an aspiring cybersecurity professional
+        interested in security operations, threat detection,
+        incident response, and information security engineering.
+      </p>
+
+      <p>
+        Through hands-on cybersecurity labs, I have gained
+        practical experience working with virtual networks,
+        security monitoring tools, firewalls, Windows systems,
+        and security investigations.
+      </p>
+
+      <div class="buttons">
+        <a href="#projects" class="btn primary">
+          View My Projects
+        </a>
+
+        <a href="#resume" class="btn secondary">
+          My Résumé
+        </a>
+      </div>
+    </div>
+
+    <section id="projects">
+      <h2>Featured Cybersecurity Project</h2>
+
+      <div class="card">
+        <h3>Enterprise SOC Analyst Home Lab</h3>
+
+        <p>
+          Designed and configured a virtual cybersecurity
+          environment to practice security monitoring,
+          network defense, and incident investigation.
+        </p>
+
+        <p>
+          The lab includes Windows Server with Active
+          Directory, Windows 11, pfSense firewall, Wazuh
+          SIEM, Ubuntu Linux, and Kali Linux.
+        </p>
+
+        <div class="tags">
+          <span class="tag">VMware</span>
+          <span class="tag">Wazuh SIEM</span>
+          <span class="tag">pfSense</span>
+          <span class="tag">Active Directory</span>
+          <span class="tag">Windows Server</span>
+          <span class="tag">Kali Linux</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="resume">
+      <h2>My Résumé</h2>
+      <div class="card">
+        <p>
+          My professional résumé, education, and
+          experience will be available here.
+        </p>
+        <p>Résumé PDF coming soon.</p>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Technical Skills</h2>
+
+      <div class="card">
+        <div class="tags">
+          <span class="tag">Security Monitoring</span>
+          <span class="tag">Incident Investigation</span>
+          <span class="tag">Network Security</span>
+          <span class="tag">Firewall Configuration</span>
+          <span class="tag">Active Directory</span>
+          <span class="tag">Virtualization</span>
+          <span class="tag">Linux</span>
+          <span class="tag">Windows Administration</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <div class="card">
+        <h3>Bachelor's Degree in Cybersecurity</h3>
+        <p>
+          Academic background in cybersecurity,
+          network security, and information systems.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+
+      <div class="card">
+        <p>
+          Interested in connecting about cybersecurity
+          opportunities, projects, or professional networking?
+        </p>
+        <p>
+          My professional contact information and
+          LinkedIn profile will be added here.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Biruk Bergena | Cybersecurity Portfolio</p>
+  </footer>
+
 </body>
 </html>
