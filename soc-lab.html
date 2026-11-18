@@ -58,6 +58,12 @@ table td {
 table tbody tr:hover {
   background: #20344b;
 }
+table td {
+  padding: 12px;
+  border-bottom: 1px solid #334155;
+  color: #b9c6d5;
+  font-size: 14px;
+}
  
   </style>
 </head>
@@ -90,84 +96,8 @@ table tbody tr:hover {
     </div>
 
     <div class="card">
-      <h2>Technologies Used</h2>
-      <p>
-        VMware Workstation, Windows Server,
-        Windows 11, Active Directory, pfSense,
-        Wazuh SIEM, Ubuntu Linux, and Kali Linux.
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>Security Investigations</h2>
-      <p>
-        This section will document practical
-        security investigations, including
-        authentication monitoring, alert analysis,
-        firewall log reviews, and incident response.
-      </p>
-    </div>
-<div class="card">
-  <h2>SOC Lab Network Architecture</h2>
-
-<h3>VMware SOC Lab Architecture Diagram</h3>
-
-<img
-  src="SOC-Lab-Architecture.png"
-  alt="Enterprise SOC Lab Network Architecture showing pfSense,
-       Active Directory, Wazuh SIEM, Kali Linux, and OWASP"
-  style="width:100%; height:auto; border-radius:10px;
-         margin:20px 0; background:white;"
->
-
-<p>
-  Figure 1: My VMware-based SOC lab architecture,
-  showing network segmentation through pfSense,
-  Windows endpoints, centralized Wazuh monitoring,
-  and a controlled security testing environment.
-</p>
-
-  <p>
-    I built a virtual cybersecurity lab using VMware
-    Workstation to simulate a small enterprise network.
-    The environment contains Windows and Linux systems
-    connected through a pfSense firewall.
-  </p>
-
-  <p>
-    Windows Server provides Active Directory and DNS
-    services, while Windows 11 represents an employee
-    workstation.
-  </p>
-
-  <p>
-    Wazuh serves as the Security Information and Event
-    Management (SIEM) platform, collecting and analyzing
-    security events from monitored systems.
-  </p>
-
-  <p>
-    Kali Linux provides a controlled environment for
-    practicing authorized security testing and generating
-    activity that can be investigated through security logs.
-  </p>
-
-  <h3>Security Monitoring Workflow</h3>
-
-  <p>
-    Simulated Security Activity
-    → Windows/Linux Logs
-    → Wazuh SIEM
-    → Security Alerts
-    → Analyst Investigation
-  </p>
-</div>
-
-    <div class="card">
+     <h2>Network and IP Configuration</h2>
       
-<div class="card">
-  <h2>Network and IP Configuration</h2>
-
   <p>
     The SOC lab uses separate VMware virtual networks
     to isolate corporate systems, security monitoring,
@@ -244,7 +174,7 @@ table tbody tr:hover {
     </table>
   </div>
 </div>
-
+    
       <h2>Architecture and Evidence</h2>
       <p>
         Network diagrams, screenshots, and
