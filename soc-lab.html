@@ -47,6 +47,18 @@
       border: 1px solid #2b4058;
       margin: 25px 0;
     }
+    
+table td {
+  padding: 12px;
+  border-bottom: 1px solid #334155;
+  color: #b9c6d5;
+  font-size: 14px;
+}
+
+table tbody tr:hover {
+  background: #20344b;
+}
+ 
   </style>
 </head>
 
@@ -152,6 +164,87 @@
 </div>
 
     <div class="card">
+      
+<div class="card">
+  <h2>Network and IP Configuration</h2>
+
+  <p>
+    The SOC lab uses separate VMware virtual networks
+    to isolate corporate systems, security monitoring,
+    vulnerable applications, and attacker machines.
+    pfSense provides routing and firewall controls
+    between the configured network segments.
+  </p>
+
+  <div style="overflow-x:auto;">
+    <table style="width:100%; border-collapse:collapse;
+                  text-align:left;">
+
+      <thead>
+        <tr style="color:#2dd4bf;">
+          <th style="padding:12px; border-bottom:1px solid #475569;">
+            Network
+          </th>
+          <th style="padding:12px; border-bottom:1px solid #475569;">
+            Subnet
+          </th>
+          <th style="padding:12px; border-bottom:1px solid #475569;">
+            Gateway
+          </th>
+          <th style="padding:12px; border-bottom:1px solid #475569;">
+            Purpose
+          </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>VMnet8 - WAN</td>
+          <td>192.168.246.0/24</td>
+          <td>VMware NAT</td>
+          <td>Internet access</td>
+        </tr>
+        <tr>
+          <td>VMnet2 - Corporate</td>
+          <td>10.10.10.0/24</td>
+          <td>10.10.10.1</td>
+          <td>Domain and workstations</td>
+        </tr>
+        <tr>
+          <td>VMnet3 - SOC</td>
+          <td>10.10.20.0/24</td>
+          <td>10.10.20.1</td>
+          <td>Security monitoring</td>
+        </tr>
+        <tr>
+          <td>VMnet4 - DMZ</td>
+          <td>10.10.30.0/24</td>
+          <td>10.10.30.1</td>
+          <td>Web application testing</td>
+        </tr>
+        <tr>
+          <td>VMnet5 - Attacker</td>
+          <td>10.10.40.0/24</td>
+          <td>10.10.40.1</td>
+          <td>Controlled security testing</td>
+        </tr>
+        <tr>
+          <td>VMnet6 - Quarantine</td>
+          <td>10.10.60.0/24</td>
+          <td>Not configured</td>
+          <td>Future isolation exercises</td>
+        </tr>
+        <tr>
+          <td>VMnet7 - Management</td>
+          <td>10.10.70.0/24</td>
+          <td>10.10.70.1</td>
+          <td>Firewall administration</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
       <h2>Architecture and Evidence</h2>
       <p>
         Network diagrams, screenshots, and
