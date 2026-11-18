@@ -1,12 +1,20 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Biruk Bergena's VMware SOC Analyst Home Lab portfolio project.">
   <title>SOC Home Lab | Biruk Bergena</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       background: #0b1423;
@@ -26,50 +34,132 @@
       text-decoration: none;
     }
 
-    main {
-      max-width: 950px;
-      margin: auto;
-      padding: 60px 8%;
+    a:hover {
+      text-decoration: underline;
     }
 
-    h1, h2 {
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 50px 5%;
+    }
+
+    h1 {
       color: #2dd4bf;
+      font-size: clamp(28px, 5vw, 38px);
+    }
+
+    h2 {
+      color: #2dd4bf;
+      margin-top: 0;
+    }
+
+    h3 {
+      color: #f8fafc;
     }
 
     p, li {
       color: #b9c6d5;
     }
 
+    .intro {
+      font-size: 17px;
+      margin-bottom: 35px;
+    }
+
     .card {
       background: #17263a;
-      padding: 25px;
+      padding: 28px;
       border-radius: 12px;
       border: 1px solid #2b4058;
       margin: 25px 0;
     }
-    
-table td {
-  padding: 12px;
-  border-bottom: 1px solid #334155;
-  color: #b9c6d5;
-  font-size: 14px;
-}
 
-table tbody tr:hover {
-  background: #20344b;
-}
-    
-table td {
-  padding: 12px;
-  border-bottom: 1px solid #334155;
-  color: #b9c6d5;
-  font-size: 14px;
-}
+    .diagram {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+      background: white;
+      margin: 20px 0;
+    }
 
- table tbody tr:hover {
-  background: #20344b;
-} 
-    
+    .caption {
+      color: #94a3b8;
+      font-size: 14px;
+      font-style: italic;
+    }
+
+    .table-container {
+      overflow-x: auto;
+      margin-top: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 14px;
+    }
+
+    table th {
+      padding: 12px;
+      color: #2dd4bf;
+      border-bottom: 1px solid #475569;
+      white-space: nowrap;
+    }
+
+    table td {
+      padding: 12px;
+      color: #b9c6d5;
+      border-bottom: 1px solid #334155;
+      vertical-align: top;
+    }
+
+    table tbody tr:hover {
+      background: #20344b;
+    }
+
+    .workflow {
+      background: #0e2033;
+      border-left: 4px solid #2dd4bf;
+      padding: 20px;
+      border-radius: 8px;
+      color: #e2e8f0;
+      margin-top: 15px;
+      overflow-wrap: anywhere;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #203c4b;
+      color: #5eead4;
+      padding: 5px 12px;
+      margin: 5px;
+      border-radius: 20px;
+      font-size: 13px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      border-top: 1px solid #26364a;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding: 30px 4%;
+      }
+
+      .card {
+        padding: 18px;
+      }
+
+      table {
+        font-size: 12px;
+      }
+    }
   </style>
 </head>
 
@@ -80,96 +170,311 @@ table td {
   </header>
 
   <main>
+
     <h1>Enterprise SOC Analyst Home Lab</h1>
 
-    <p>
-      A hands-on cybersecurity project designed
-      to simulate an enterprise network and practice
+    <p class="intro">
+      A hands-on cybersecurity project designed to
+      simulate an enterprise network and practice
       security monitoring, threat detection,
-      and incident investigation.
+      network defense, and incident investigation.
     </p>
 
-    <div class="card">
+    <!-- SECTION 1: PROJECT OBJECTIVES -->
+
+    <section class="card">
       <h2>Project Objectives</h2>
+
       <ul>
-        <li>Build a virtual enterprise network.</li>
-        <li>Configure Active Directory and Windows clients.</li>
-        <li>Implement network security using pfSense.</li>
-        <li>Monitor security events using Wazuh SIEM.</li>
-        <li>Practice investigating simulated cyberattacks.</li>
+        <li>Build a virtual enterprise network using VMware Workstation.</li>
+        <li>Configure Windows Server Active Directory and DNS.</li>
+        <li>Connect and manage a Windows 11 domain workstation.</li>
+        <li>Implement network segmentation using pfSense.</li>
+        <li>Monitor security events through Wazuh SIEM.</li>
+        <li>Practice authorized security testing using Kali Linux.</li>
+        <li>Develop incident investigation and documentation skills.</li>
       </ul>
-    </div>
+    </section>
 
-    <div class="card">
-<h2>Virtual Machine Inventory</h2>
+    <!-- SECTION 2: TECHNOLOGIES -->
 
-  <p>
-    My SOC home lab contains six virtual machines
-    that simulate enterprise IT infrastructure,
-    security monitoring, and authorized testing.
-  </p>
+    <section class="card">
+      <h2>Technologies Used</h2>
 
-  <div style="overflow-x:auto;">
-    <table style="width:100%; border-collapse:collapse; text-align:left;">
-      <thead>
-        <tr style="color:#2dd4bf;">
-          <th>Virtual Machine</th>
-          <th>Operating System</th>
-          <th>IP Address</th>
-          <th>Role</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>pfSense</td>
-          <td>pfSense CE 2.8.1</td>
-          <td>Multiple interfaces</td>
-          <td>Firewall and routing</td>
-        </tr>
-        <tr>
-          <td>DC1</td>
-          <td>Windows Server 2025</td>
-          <td>10.10.10.10</td>
-          <td>Active Directory and DNS</td>
-        </tr>
-        <tr>
-          <td>WIN11</td>
-          <td>Windows 11</td>
-          <td>10.10.10.20</td>
-          <td>Domain-joined workstation</td>
-        </tr>
-        <tr>
-          <td>Wazuh-SOC</td>
-          <td>Ubuntu Server 24.04</td>
-          <td>10.10.20.10</td>
-          <td>SIEM and log analysis</td>
-        </tr>
-        <tr>
-          <td>OWASP</td>
-          <td>Ubuntu / Docker</td>
-          <td>10.10.30.10</td>
-          <td>Web application testing</td>
-        </tr>
-        <tr>
-          <td>Kali Linux</td>
-          <td>Kali Linux</td>
-          <td>10.10.40.10</td>
-          <td>Authorized attack simulation</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
+      <span class="tag">VMware Workstation</span>
+      <span class="tag">Windows Server 2025</span>
+      <span class="tag">Windows 11</span>
+      <span class="tag">Active Directory</span>
+      <span class="tag">DNS</span>
+      <span class="tag">pfSense CE</span>
+      <span class="tag">Wazuh SIEM</span>
+      <span class="tag">Ubuntu Linux</span>
+      <span class="tag">Kali Linux</span>
+      <span class="tag">Docker</span>
+      <span class="tag">OWASP Juice Shop</span>
+    </section>
 
-    
-      <h2>Architecture and Evidence</h2>
+    <!-- SECTION 3: NETWORK ARCHITECTURE -->
+
+    <section class="card">
+      <h2>SOC Lab Network Architecture</h2>
+
       <p>
-        Network diagrams, screenshots, and
-        investigation reports will be added here.
+        I built a virtual cybersecurity environment
+        using VMware Workstation to simulate a
+        segmented enterprise network.
       </p>
-    </div>
+
+      <h3>VMware SOC Lab Architecture Diagram</h3>
+
+      <img
+        src="SOC-Lab-Architecture.png"
+        alt="VMware SOC architecture with pfSense, Active Directory, Wazuh, Kali Linux and OWASP"
+        class="diagram"
+      >
+
+      <p class="caption">
+        Figure 1: VMware SOC lab architecture showing
+        corporate, SOC, DMZ, attacker, and management
+        networks connected through pfSense.
+      </p>
+
+      <h3>Architecture Explanation</h3>
+
+      <p>
+        The pfSense firewall provides routing and
+        network security controls between the
+        configured VMware virtual networks.
+      </p>
+
+      <p>
+        Windows Server 2025 provides Active Directory
+        and DNS services. Windows 11 represents a
+        domain-joined employee workstation.
+      </p>
+
+      <p>
+        Wazuh runs on Ubuntu Server and provides
+        centralized security monitoring and
+        log analysis.
+      </p>
+
+      <p>
+        Kali Linux provides a controlled testing
+        environment, while OWASP Juice Shop
+        represents a deliberately vulnerable
+        web application for security exercises.
+      </p>
+
+      <h3>Security Monitoring Workflow</h3>
+
+      <div class="workflow">
+        Simulated Security Activity
+        → Windows/Linux Security Logs
+        → Wazuh SIEM
+        → Security Alerts
+        → Analyst Investigation
+      </div>
+    </section>
+
+    <!-- SECTION 4: NETWORK AND IP CONFIGURATION -->
+
+    <section class="card">
+      <h2>Network and IP Configuration</h2>
+
+      <p>
+        The SOC lab uses separate VMware virtual
+        networks to isolate corporate systems,
+        security monitoring, vulnerable applications,
+        and controlled security testing.
+      </p>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Network</th>
+              <th>Subnet</th>
+              <th>Gateway</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>VMnet8 - WAN</td>
+              <td>192.168.246.0/24</td>
+              <td>VMware NAT</td>
+              <td>Internet connectivity</td>
+            </tr>
+
+            <tr>
+              <td>VMnet2 - Corporate</td>
+              <td>10.10.10.0/24</td>
+              <td>10.10.10.1</td>
+              <td>Windows domain and workstations</td>
+            </tr>
+
+            <tr>
+              <td>VMnet3 - SOC</td>
+              <td>10.10.20.0/24</td>
+              <td>10.10.20.1</td>
+              <td>Centralized security monitoring</td>
+            </tr>
+
+            <tr>
+              <td>VMnet4 - DMZ</td>
+              <td>10.10.30.0/24</td>
+              <td>10.10.30.1</td>
+              <td>Vulnerable web application</td>
+            </tr>
+
+            <tr>
+              <td>VMnet5 - Attacker</td>
+              <td>10.10.40.0/24</td>
+              <td>10.10.40.1</td>
+              <td>Controlled security testing</td>
+            </tr>
+
+            <tr>
+              <td>VMnet6 - Quarantine</td>
+              <td>10.10.60.0/24</td>
+              <td>Not configured</td>
+              <td>Reserved for future isolation exercises</td>
+            </tr>
+
+            <tr>
+              <td>VMnet7 - Management</td>
+              <td>10.10.70.0/24</td>
+              <td>10.10.70.1</td>
+              <td>Firewall administration</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SECTION 5: VIRTUAL MACHINE INVENTORY -->
+
+    <section class="card">
+      <h2>Virtual Machine Inventory</h2>
+
+      <p>
+        The following six virtual machines form
+        my SOC lab environment. Each machine has
+        a specific role in administration,
+        security monitoring, or testing.
+      </p>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Virtual Machine</th>
+              <th>Operating System</th>
+              <th>IP Address</th>
+              <th>Role</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>pfSense</td>
+              <td>pfSense CE 2.8.1</td>
+              <td>Multiple interfaces</td>
+              <td>Firewall and routing</td>
+            </tr>
+
+            <tr>
+              <td>DC1</td>
+              <td>Windows Server 2025</td>
+              <td>10.10.10.10</td>
+              <td>Active Directory and DNS</td>
+            </tr>
+
+            <tr>
+              <td>WIN11</td>
+              <td>Windows 11</td>
+              <td>10.10.10.20</td>
+              <td>Domain-joined workstation</td>
+            </tr>
+
+            <tr>
+              <td>Wazuh-SOC</td>
+              <td>Ubuntu Server 24.04</td>
+              <td>10.10.20.10</td>
+              <td>SIEM and log analysis</td>
+            </tr>
+
+            <tr>
+              <td>OWASP</td>
+              <td>Ubuntu / Docker</td>
+              <td>10.10.30.10</td>
+              <td>Web application testing</td>
+            </tr>
+
+            <tr>
+              <td>Kali Linux</td>
+              <td>Kali Linux</td>
+              <td>10.10.40.10</td>
+              <td>Authorized attack simulation</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SECTION 6: SECURITY INVESTIGATIONS -->
+
+    <section class="card">
+      <h2>Security Investigations</h2>
+
+      <p>
+        This section will document hands-on SOC
+        investigations performed in the lab.
+      </p>
+
+      <p>
+        Investigation topics include authentication
+        monitoring, Wazuh alert analysis, firewall
+        log reviews, and incident response.
+      </p>
+
+      <p>
+        Screenshots, investigation findings, and
+        incident reports will be added as
+        exercises are completed and verified.
+      </p>
+    </section>
+
+    <!-- SECTION 7: ARCHITECTURE AND EVIDENCE -->
+
+    <section class="card">
+      <h2>Architecture and Evidence</h2>
+
+      <p>
+        This project documents my experience
+        designing and configuring a segmented
+        cybersecurity lab.
+      </p>
+
+      <p>
+        Additional evidence will include Wazuh
+        dashboard screenshots, Windows security
+        events, pfSense firewall logs, and
+        incident investigation reports.
+      </p>
+    </section>
 
   </main>
+
+  <footer>
+    <p>
+      © 2026 Biruk Bergena |
+      Cybersecurity Professional Portfolio
+    </p>
+    <a href="index.html">Back to Portfolio</a>
+  </footer>
 
 </body>
 </html>
