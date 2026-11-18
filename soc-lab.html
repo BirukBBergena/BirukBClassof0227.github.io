@@ -101,84 +101,66 @@ table td {
     </div>
 
     <div class="card">
-     <h2>Network and IP Configuration</h2>
-      
+<h2>Virtual Machine Inventory</h2>
+
   <p>
-    The SOC lab uses separate VMware virtual networks
-    to isolate corporate systems, security monitoring,
-    vulnerable applications, and attacker machines.
-    pfSense provides routing and firewall controls
-    between the configured network segments.
+    My SOC home lab contains six virtual machines
+    that simulate enterprise IT infrastructure,
+    security monitoring, and authorized testing.
   </p>
 
   <div style="overflow-x:auto;">
-    <table style="width:100%; border-collapse:collapse;
-                  text-align:left;">
-
+    <table style="width:100%; border-collapse:collapse; text-align:left;">
       <thead>
         <tr style="color:#2dd4bf;">
-          <th style="padding:12px; border-bottom:1px solid #475569;">
-            Network
-          </th>
-          <th style="padding:12px; border-bottom:1px solid #475569;">
-            Subnet
-          </th>
-          <th style="padding:12px; border-bottom:1px solid #475569;">
-            Gateway
-          </th>
-          <th style="padding:12px; border-bottom:1px solid #475569;">
-            Purpose
-          </th>
+          <th>Virtual Machine</th>
+          <th>Operating System</th>
+          <th>IP Address</th>
+          <th>Role</th>
         </tr>
       </thead>
-
       <tbody>
         <tr>
-          <td>VMnet8 - WAN</td>
-          <td>192.168.246.0/24</td>
-          <td>VMware NAT</td>
-          <td>Internet access</td>
+          <td>pfSense</td>
+          <td>pfSense CE 2.8.1</td>
+          <td>Multiple interfaces</td>
+          <td>Firewall and routing</td>
         </tr>
         <tr>
-          <td>VMnet2 - Corporate</td>
-          <td>10.10.10.0/24</td>
-          <td>10.10.10.1</td>
-          <td>Domain and workstations</td>
+          <td>DC1</td>
+          <td>Windows Server 2025</td>
+          <td>10.10.10.10</td>
+          <td>Active Directory and DNS</td>
         </tr>
         <tr>
-          <td>VMnet3 - SOC</td>
-          <td>10.10.20.0/24</td>
-          <td>10.10.20.1</td>
-          <td>Security monitoring</td>
+          <td>WIN11</td>
+          <td>Windows 11</td>
+          <td>10.10.10.20</td>
+          <td>Domain-joined workstation</td>
         </tr>
         <tr>
-          <td>VMnet4 - DMZ</td>
-          <td>10.10.30.0/24</td>
-          <td>10.10.30.1</td>
+          <td>Wazuh-SOC</td>
+          <td>Ubuntu Server 24.04</td>
+          <td>10.10.20.10</td>
+          <td>SIEM and log analysis</td>
+        </tr>
+        <tr>
+          <td>OWASP</td>
+          <td>Ubuntu / Docker</td>
+          <td>10.10.30.10</td>
           <td>Web application testing</td>
         </tr>
         <tr>
-          <td>VMnet5 - Attacker</td>
-          <td>10.10.40.0/24</td>
-          <td>10.10.40.1</td>
-          <td>Controlled security testing</td>
-        </tr>
-        <tr>
-          <td>VMnet6 - Quarantine</td>
-          <td>10.10.60.0/24</td>
-          <td>Not configured</td>
-          <td>Future isolation exercises</td>
-        </tr>
-        <tr>
-          <td>VMnet7 - Management</td>
-          <td>10.10.70.0/24</td>
-          <td>10.10.70.1</td>
-          <td>Firewall administration</td>
+          <td>Kali Linux</td>
+          <td>Kali Linux</td>
+          <td>10.10.40.10</td>
+          <td>Authorized attack simulation</td>
         </tr>
       </tbody>
     </table>
   </div>
 </div>
+
     
       <h2>Architecture and Evidence</h2>
       <p>
